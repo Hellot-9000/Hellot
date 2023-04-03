@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Webpage</title>
+	<style>
+		/* style for the sidebar */
+		nav {
+			background-color: #333;
+			color: #fff;
+			height: 100vh;
+			width: 200px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			padding: 20px;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		nav li {
+			margin: 0 0 10px 0;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		/* style for the content */
+		.content {
+			margin-left: 200px;
+			padding: 20px;
+		}
+
+		/* responsive styles */
+		@media screen and (max-width: 768px) {
+			nav {
+				width: 100%;
+			}
+
+			.content {
+				margin-left: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- sidebar -->
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+
+	<!-- main content -->
+	<div class="content">
+		<h1>Welcome to my webpage</h1>
+		<p>This is the main content of my webpage.</p>
+	</div>
+
+	<script>
+		// function to adjust sidebar width on resize
+		function resizeSidebar() {
+			var nav = document.querySelector('nav');
+			var content = document.querySelector('.content');
+
+			if (window.innerWidth <= 768) {
+				nav.style.width = '100%';
+				content.style.marginLeft = '0';
+			} else {
+				nav.style.width = '200px';
+				content.style.marginLeft = '200px';
+			}
+		}
+
+		// listen for changes in viewport size
+		window.addEventListener('resize', resizeSidebar);
+
+		// adjust sidebar width on page load
+		resizeSidebar();
+	</script>
+</body>
+</html>
